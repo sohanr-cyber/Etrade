@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
 import CircularProgress from "@mui/material/CircularProgress";
 import Head from "next/head";
+import { motion } from "framer-motion";
 const Login = () => {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -49,12 +50,20 @@ const Login = () => {
   return (
     <div className={styles.wrapper}>
       <Head>
-        <title>Login To Avocado</title>
+        <title>Login To ETrade</title>
       </Head>
-      <div className={styles.box}>
+      <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5 },
+        }}
+        className={styles.box}
+      >
         <div className={styles.top}>
           <h2>
-            Welcome To <span>AVOCADO</span>
+            Welcome To <span>ETRADE</span>
           </h2>
           <p>
             Invest in an Industry Leader, Professional, and Reliable Company. We
@@ -89,7 +98,7 @@ const Login = () => {
             </div>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };

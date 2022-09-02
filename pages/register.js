@@ -8,7 +8,7 @@ import { login } from "../redux/userSlice";
 import CircularProgress from "@mui/material/CircularProgress";
 import Head from "next/head";
 import { validate } from "email-validator";
-
+import { motion } from "framer-motion";
 const Login = () => {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -49,7 +49,6 @@ const Login = () => {
       return;
     }
 
-
     try {
       setLoading(true);
       const { data } = await axios.post("/api/register", {
@@ -79,10 +78,18 @@ const Login = () => {
       <Head>
         <title>Register To Avocado</title>
       </Head>
-      <div className={styles.box}>
+      <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5 },
+        }}
+        className={styles.box}
+      >
         <div className={styles.top}>
           <h2>
-            Welcome To <span>AVOCADO</span>
+            Welcome To <span>ETRADE</span>
           </h2>
           <p>
             Invest in an Industry Leader, Professional, and Reliable Company. We
@@ -108,7 +115,7 @@ const Login = () => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <input
+          {/* <input
             type="text"
             placeholder="NID / Passport"
             onChange={(e) => setNid(e.target.value)}
@@ -134,7 +141,7 @@ const Login = () => {
             type="text"
             placeholder="BNB(BEP2)"
             onChange={(e) => setBnb(e.target.value)}
-          />
+          /> */}
           {errors && <div className={styles.error}>{errors} </div>}
           <div className={styles.flex}>
             {loading ? (
@@ -148,7 +155,7 @@ const Login = () => {
             </div>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };

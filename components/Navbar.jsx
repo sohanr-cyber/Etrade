@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const router = useRouter();
@@ -11,9 +12,17 @@ const Navbar = () => {
   const userInfo = useSelector((state) => state.user.userInfo);
   console.log(router);
   return (
-    <div className={styles.navbar}>
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 1 },
+      }}
+      className={styles.navbar}
+    >
       <div className={styles.nav__logo} onClick={() => router.push("/")}>
-        Avo<span>Cado</span>
+        <span>E</span>TRADE
       </div>
       <div className={styles.nav__items}>
         <div
@@ -178,7 +187,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

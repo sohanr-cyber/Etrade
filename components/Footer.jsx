@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 import CopyrightIcon from "@mui/icons-material/Copyright";
-
+import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <div
@@ -15,19 +15,27 @@ const Footer = () => {
       //   backgroundPosition: "center",
       // }}
     >
-      <div className={styles.grid}>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 1 },
+        }}
+        className={styles.grid}
+      >
         {" "}
         <div className={styles.left}>
           <logo></logo>
-          <div className={styles.name}>Avocado</div>
+          <div className={styles.name}>ETrade</div>
         </div>
         <div className={styles.mid}>
           <div className={styles.contact}>Contact Us</div>
-          <b className={styles.place}>palacio de Bellas Artes,Mexico City</b>
+          <div className={styles.phone}>Call Us : +88032-30503</div>
           <div className={styles.email}>
-            Support : <span> supoa4470@gmail.com</span>
+            Mail Us : <span> testmail@gmail.com</span>
           </div>
-          {/* <div className={styles.telegram}>
+          <div className={styles.telegram}>
             Telegram : Click <span>Here</span> to contact use
           </div>
           <div className={styles.flex}>
@@ -57,7 +65,7 @@ const Footer = () => {
                 alt="inst"
               />
             </div>
-          </div> */}
+          </div>
         </div>
         <div className={styles.right}>
           <h3 className={styles.heading}>
@@ -71,12 +79,13 @@ const Footer = () => {
             month. Our aim is to create a millionaire from every country and
             eradicate poverty from every country, as well as create jobs.
           </p>
-          {/* <div className={styles.flex}>
+          <div className={styles.flex}>
             <span>Terms & Condition</span>
             <span>Privacy</span>
-          </div> */}
+          </div>
         </div>
-      </div>
+      </motion.div>
+
       <div className={styles.rights}>
         <CopyrightIcon style={{ fontSize: "130%" }} />
         2022 All Rights Reserved

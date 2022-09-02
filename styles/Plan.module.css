@@ -1,6 +1,6 @@
 .wrapper {
   text-align: center;
-  padding: 15px;
+  padding: 70px 15px;
 }
 
 .image__container {
@@ -27,7 +27,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 18px;
   align-items: center;
   min-height: 400px;
   min-width: 290px;
@@ -37,7 +37,7 @@
 .price {
   font-size: 150%;
   font-weight: bold;
-  color: var(--secondary);
+  /* color: var(--secondary); */
   border-bottom: 1px solid gold;
 }
 
@@ -50,6 +50,13 @@
   border-bottom: 1px solid lightgray;
   border-bottom: 1px solid gold;
   min-width: 250px;
+}
+
+.reward {
+  color: var(--primary);
+  font-size: 140%;
+  /* font-weight: bold; */
+  border-bottom: none;
 }
 
 .image__wrapper:hover {

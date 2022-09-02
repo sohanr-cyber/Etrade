@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../styles/About.module.css";
+import { motion } from "framer-motion";
+
 
 const About = () => {
   return (
@@ -14,21 +16,34 @@ const About = () => {
       id="about"
     >
       <div className={styles.left}></div>
-      <div className={styles.right}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{
+          opacity: 1,
+          transition: { duration: 1 },
+        }}
+        className={styles.right}
+      >
         <h1>
           About <span>Us</span>
         </h1>
         <p>
-          It is a virtual investment platform. But we invest your investments in
-          many places. We try to give good profit to everyone through advanced
-          technology. Not everyone has to invest here. Anyone can establish
-          himself by working as a promoter and earn salary every month. Our aim
-          is to create a millionaire from every country and eradicate poverty
-          from every country, as well as create jobs.
+          We are an international financial company engaged in investment
+          activities, which are related to trading on financial markets and
+          cryptocurrency exchanges performed by qualified professional traders.
         </p>
 
-        {/* <btn>MORE INFO</btn> */}
-      </div>
+        <p>
+          Our goal is to provide our investors with a reliable source of high
+          income, while minimizing any possible risks and offering a
+          high-quality service, allowing us to automate and simplify the
+          relations between the investors and the trustees. We work towards
+          increasing your profit margin by profitable investment. We look
+          forward to you being part of our community.
+        </p>
+
+        <btn>MORE INFO</btn>
+      </motion.div>
     </div>
   );
 };

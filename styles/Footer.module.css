@@ -28,6 +28,12 @@
   color: var(--secondary);
   cursor: pointer;
 }
+
+.name {
+  font-weight: bold;
+  font-size: 120%;
+  color: var(--secondary);
+}
 .wrapper .right {
   font-size: 60%;
 }
@@ -56,6 +62,7 @@
   justify-content: center;
   gap: 5px;
   font-size: 70%;
+  margin-top: 15px;
 }
 
 .mid .flex {

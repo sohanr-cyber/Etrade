@@ -1,59 +1,105 @@
 import React from "react";
 import styles from "../styles/Plan.module.css";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 const plans = [
-  { price: "8000 $", benifit: "6.5X", duration: "330 days", pay: "17 times" },
-  { price: "10000 $", benifit: "9X", duration: "300 days", pay: "16 times" },
-  { price: "13000 $", benifit: "9X", duration: "300 days", pay: "16 times" },
   {
-    price: "16000 $",
-    benifit: "10.3X",
-    duration: "280 days",
-    pay: "7 times",
-    reward: "164 Fil",
+    name: "Slivesto",
+    return: "Return 6%",
+    time: "For Week",
+    time2: "For 5 Week",
+    total: "For 5 Week",
+    price: "$200",
   },
   {
-    price: "7000 $",
-    benifit: "Lifetime",
-    duration: "Infinity",
-    pay: "6 times in a year",
+    name: "Life Time",
+    return: "Return 0.2%",
+    time: "Every Day",
+    time2: "For Lifetime",
+    total: "Lifetime Earning",
+    price: "$100 - $200",
   },
   {
-    price: "2300 $",
-    benifit: "4.7X",
-    duration: "365 days",
-    pay: "14 times",
+    name: "Black Horse",
+    return: "Return 5%",
+    time: "Every Week",
+    time2: "For 40 Week",
+    total: "Total 200%",
+    price: "$500 - $5000",
   },
   {
-    price: "25000 $",
-    benifit: "13X",
-    duration: "310 days",
-    pay: "17 times",
-    rewared: "329 Fil",
+    name: "Silver",
+    return: "Return 5%",
+    time: "Every Day",
+    time2: "For 25 Day",
+    total: "Total 125%",
+    price: "$500",
   },
   {
-    price: "5000 $",
-    benifit: "6X",
-    duration: "360 days",
-    pay: "11 times",
-    rewared: "25 Fil",
+    name: "Elephant",
+    return: "Return 1.1USD",
+    time: "Every Day",
+    time2: "For 50 Day",
+    total: "Total 55USD +",
+    price: "$500 - $700",
+  },
+  {
+    name: "Cobra",
+    return: "Return 10USD",
+    time: "Every Hour",
+    time2: "For 150 Hour",
+    total: "Total 1500USD +",
+    price: "$1000",
+  },
+  {
+    name: "Lion",
+    return: "Return 0.2%",
+    time: "Every Day",
+    time2: "For Lifetime",
+    total: "Lifetime Earning",
+    price: "$100 - $500",
+  },
+  {
+    name: "Tiger",
+    return: "Return 0.2%",
+    time: "Every Day",
+    time2: "For Lifetime",
+    total: "Lifetime Earning",
+    price: "$100 - $500",
   },
 ];
 
 const Plan = () => {
   return (
     <div className={styles.wrapper} id="plan">
-      <h1>
+      <motion.h1
+        initial={{ opacity: 0 }}
+        whileInView={{
+          opacity: 1,
+          transition: { duration: 1 },
+        }}
+      >
         Investment <span>Plans</span>{" "}
-      </h1>
-      <p>
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{
+          opacity: 1,
+          transition: { duration: 1 },
+        }}
+      >
         To make a solid investment, you have to know where you are investing.
         Find a plan which is best for you.
-      </p>
+      </motion.p>
       <div className={styles.image__container}>
-        {plans.map((plan) => (
-          <div
+        {plans.slice(0, 4).map((plan) => (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.8 },
+            }}
             style={{
               backgroundImage:
                 "url('https://template.viserlab.com/hyiplab/demo/assets/images/bg/bg-4.png')",
@@ -62,14 +108,13 @@ const Plan = () => {
             }}
             className={styles.image__wrapper}
           >
-            <div className={styles.price}>{plan.price}</div>
-            <div className={styles.benifit}>B - {plan.benifit} </div>
-            <div className={styles.duration}>Duration : {plan.duration} </div>
-            <div className={styles.pay}>Pay : {plan.pay}</div>
-            {plan.reward && (
-              <div className={styles.reward}>Reward : {plan.reward}</div>
-            )}
-          </div>
+            <h1 style={{ color: "gold" }}>{plan.name}</h1>
+            <div className={styles.price}>{plan.return}</div>
+            <div className={styles.benifit}>{plan.time} </div>
+            <div className={styles.duration}>{plan.time2} </div>
+            <div className={styles.pay}>{plan.total}</div>
+            {plan.price && <div className={styles.reward}>{plan.price}</div>}
+          </motion.div>
         ))}
       </div>
     </div>

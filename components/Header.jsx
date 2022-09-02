@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-
+import { motion } from "framer-motion";
 const Header = () => {
   const router = useRouter();
 
@@ -19,11 +18,11 @@ const Header = () => {
         backgroundPosition: "center",
       }}
     >
-      <div
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{
           opacity: 1,
-          transition: { duration: 1 },
+          transition: { duration: 0.5 },
         }}
         className={styles.left}
       >
@@ -43,7 +42,7 @@ const Header = () => {
             SIGN UP
           </btn>
         )}
-      </div>
+      </motion.div>
       <div className={styles.right}>
         {/* <Image
           src="/images/crypto1.jpg"

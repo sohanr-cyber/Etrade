@@ -1,0 +1,30 @@
+.wrapper {
+  padding: 70px 15px;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.wrapper .flex {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  overflow-x: scroll;
+  margin: 50px 0;
+
+}
+
+.card {
+  padding: 15px;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #e8d396 0%, #7b6600 100%);
+  min-width: 280px;
+  color: black;
+}
+
+.card .name {
+  font-weight: bold;
+  font-size: 125%;
+  margin-bottom: 10px;
+}

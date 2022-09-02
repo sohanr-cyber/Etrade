@@ -11,12 +11,14 @@ import Footer from "../components/Footer";
 import About from "../components/About";
 import Plan from "../components/Plan";
 import Announcement from "../components/Announcement";
+import Benifit from "../components/Benifit";
+import Reviews from "../components/Reviews";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Avocado</title>
+        <title>ETrade</title>
         <meta
           name="description"
           content="Invest for Future in Stable Platform and Make Fast Money"
@@ -39,8 +41,9 @@ export default function Home() {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />{" "}
+        <meta name="theme-color" content="#ffffff" />
       </Head>
 
       <main className={styles.main}>
@@ -48,6 +51,8 @@ export default function Home() {
         <Announcement />
         <About />
         <Plan />
+        <Benifit />
+        <Reviews />
       </main>
 
       <footer className={styles.footer}></footer>
